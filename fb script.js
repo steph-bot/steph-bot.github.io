@@ -12,7 +12,7 @@ var newsFeed = [			// array (list)
     },
     {							// element 1
         username: "Sally",
-        timeline: "Javascript is bad ass"
+        timeline: "Javascript is lit"
     }
 ];
 
