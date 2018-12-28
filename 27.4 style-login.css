@@ -1,0 +1,26 @@
+h2{
+  color: blue;
+}
+
+.boxmodel {
+  border: 5px solid red;
+  display: inline-block;
+
+  padding: 20px;
+  /*all around*/
+
+  padding: 5px 20px 5px 30px;
+  /*top, right, bottom, left*/
+
+  padding: 5px 20px;
+  /*top/bottom, left/right*/
+
+  margin: 2px 20px 2px 20px;
+  /*top, right, bottom, left*/
+
+  margin: 2px 20px;
+  /*top/bottom, left/right*/
+
+  width: 33px; /*content width*/
+  height: 55px; /*content height*/
+}
