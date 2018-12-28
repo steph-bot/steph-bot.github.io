@@ -6,7 +6,7 @@ var ul = document.querySelectorAll("ul")[1]
 var crazybtn = document.getElementById("crazystyle");
 var funBtn = document.getElementById("addStyle");
 var toggleBtn = document.getElementById("toggle");
-
+var h1 = document.querySelector("h1");
 
 // refactored code (cleaned up)
 // function declarations
@@ -41,15 +41,15 @@ function addListAfterKeypress(event){ // still need event param here
 }
 
 function makeTitlePlain(){
-	document.querySelector("h1").classList.remove("coolTitle");
+	h1.classList.remove("coolTitle");
 }
 
 function makeTitleFun(){
-	document.querySelector("h1").classList.add("coolTitle");
+	h1.classList.add("coolTitle");
 }
 
 function makeTitleToggle(){
-	document.querySelector("h1").classList.toggle("coolTitle");
+	h1.classList.toggle("coolTitle");
 }
 
 // click button >> if anyone clicks btn, run this fnxn
