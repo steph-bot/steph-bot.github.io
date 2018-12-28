@@ -19,8 +19,27 @@ function createListElement(){
 	var li = document.createElement("li");
 	// add text to list element (user input)
 	li.appendChild(document.createTextNode(input.value));
+
+	// create button element
+	var newButton = document.createElement("BUTTON");
+	// create text node (create button text)
+	var t = document.createTextNode("delete");
+	// Append the text to <button> (allows button to have text)
+	newButton.appendChild(t); 
+
+	newButton.classList.add("deleter");
+
+
+
+
+
+	// append button to list element
+	li.appendChild(newButton);
+
+
 	// append li to unordered list
 	ul.appendChild(li);
+
 	// reset form to blank value
 	input.value="";
 }
@@ -28,6 +47,9 @@ function createListElement(){
 function addListAfterClick(){
 	if (inputLength() > 0){ // user input not blank
 		createListElement();
+		// use these 2 to have cursor automatically within input box
+		input.focus();
+		input.select();
 	}
 }
 
@@ -52,6 +74,10 @@ function makeTitleToggle(){
 	h1.classList.toggle("coolTitle");
 }
 
+// use these 2 to have cursor automatically within input box
+input.focus();
+input.select();
+
 // click button >> if anyone clicks btn, run this fnxn
 button.addEventListener("click", addListAfterClick);
 
@@ -62,3 +88,10 @@ input.addEventListener("keypress", addListAfterKeypress);
 crazybtn.addEventListener("click", makeTitlePlain);
 funBtn.addEventListener("click", makeTitleFun);
 toggleBtn.addEventListener("click", makeTitleToggle);
+
+
+
+// KNOWN GLITCH: CANT CLICK WITHIN TEXT FIELD OR ADD ITEM
+// BUTTON SOMETIMES. MAY HAVE TO DO WITH COOLTITLE STYLE
+// ON H1.
+
