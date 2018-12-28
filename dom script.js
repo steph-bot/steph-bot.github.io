@@ -2,7 +2,7 @@
 // we want to select user input, button, list
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
-var ul = document.querySelector("ul")[1];
+var ul = document.querySelectorAll("ul")[1]
 
 
 // refactored code (cleaned up)
