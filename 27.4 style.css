@@ -69,22 +69,24 @@ table {
 
 .primary-nav__item{
   display: inline-block;
-  padding: 18px;
+  padding: 8px;
 }
 
 .primary-nav__item:hover{
   color:white;
   background-color:rgba(255, 176, 0, 0.5); 
   background: linear-gradient(rgba(255, 176, 0, 0), rgba(255, 176, 0, 0.8));
-  border-bottom-left-radius: 25px
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .primary-nav__link{
   color: yellow;
   text-decoration: none;
   background-color: rgba(0, 176, 0, 0.5);
-  padding: 118px;
-  border-bottom-left-radius: 25px
+  padding: 18px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .primary-nav__link:hover{
@@ -92,7 +94,7 @@ table {
   text-decoration: none;
   background-color: rgba(0, 80, 0, 0.5);
   background: linear-gradient(rgba(255, 176, 0, 0.5), rgba(255, 176, 0, 0));
-  padding: 118px;
+  padding: 18px;
 }
 /*li{
   display: inline;
