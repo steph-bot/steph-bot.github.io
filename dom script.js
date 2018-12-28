@@ -3,6 +3,9 @@
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelectorAll("ul")[1]
+var crazybtn = document.getElementById("crazystyle");
+var funBtn = document.getElementById("addStyle");
+var toggleBtn = document.getElementById("toggle");
 
 
 // refactored code (cleaned up)
@@ -37,8 +40,25 @@ function addListAfterKeypress(event){ // still need event param here
 	}
 }
 
+function makeTitlePlain(){
+	document.querySelector("h1").classList.remove("coolTitle");
+}
+
+function makeTitleFun(){
+	document.querySelector("h1").classList.add("coolTitle");
+}
+
+function makeTitleToggle(){
+	document.querySelector("h1").classList.toggle("coolTitle");
+}
+
 // click button >> if anyone clicks btn, run this fnxn
 button.addEventListener("click", addListAfterClick);
 
 // press enter >> if press enter, run this fnxn
 input.addEventListener("keypress", addListAfterKeypress);
+
+// click button >> if anyone clicks btn, run this fnxn
+crazybtn.addEventListener("click", makeTitlePlain);
+funBtn.addEventListener("click", makeTitleFun);
+toggleBtn.addEventListener("click", makeTitleToggle);
