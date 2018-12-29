@@ -27,13 +27,11 @@ function createListElement(){
 	var t = document.createTextNode("delete");
 	// Append the text to <button> (allows button to have text)
 	newButton.appendChild(t); 
-
+	// assign class to new btn
 	newButton.classList.add("deleter");
-
 
 	// append button to list element
 	li.appendChild(newButton);
-
 
 	// append li to unordered list
 	ul.appendChild(li);
@@ -45,24 +43,25 @@ function createListElement(){
 function addListAfterClick(){
 	if (inputLength() > 0){ // user input not blank
 		createListElement();
-		// use these 2 to have cursor automatically within input box
-		input.focus();
-		input.select();
+
+		// adds new buttons to eventlistener
+		for (var i=0; i < delBtn.length; i++){
+			delBtn[i].addEventListener("click", duh);
+		}
 	}
 }
 
 function addListAfterKeypress(event){ // still need event param here
 	//console.log(event);
 
-	// user input not blank AND press enter key
+	// user input not blank AND press enter key >> create new items
 	if (inputLength() > 0 && event.keyCode ===13){ 
 		createListElement();
 
+		// adds new buttons to eventlistener
 		for (var i=0; i < delBtn.length; i++){
-    console.log(delBtn[i]);
-    delBtn[i].addEventListener("click", duh);
-}
-
+			delBtn[i].addEventListener("click", duh);
+		}
 	}
 }
 
@@ -79,14 +78,13 @@ function makeTitleToggle(){
 }
 
 
-// function deleteItemAndBtn(){
-// 	itmAndBtn[0].parentNode.removeChild(itmAndBtn[0]);
-// }
 
 var duh = function(event) {
-	console.log(event.target);
+	// console.log(event.target);
 	event.target.parentNode.remove();
-	// itmAndBtn[n].parentNode.removeChild(itmAndBtn[n]);
+	// use these 2 to have cursor automatically within input box
+		input.focus();
+		input.select();
 }
 
 
@@ -94,54 +92,34 @@ var duh = function(event) {
 input.focus();
 input.select();
 
-// click button >> if anyone clicks btn, run this fnxn
+// click button >> if anyone clicks btn, add new list itm
 button.addEventListener("click", addListAfterClick);
 
-// press enter >> if press enter, run this fnxn
+// press enter >> if press enter, run this fnxn to add new list itm
 input.addEventListener("keypress", addListAfterKeypress);
 
+// PLAY WITH SHOPPING LIST TITLE
 // click button >> if anyone clicks btn, run this fnxn
 crazybtn.addEventListener("click", makeTitlePlain);
 funBtn.addEventListener("click", makeTitleFun);
 toggleBtn.addEventListener("click", makeTitleToggle);
 
 
-// itmAndBtn[0].addEventListener("click", deleteItemAndBtn);
-
-// itmAndBtn[0].addEventListener("click", duh);
-
-// use anonymous function to pass param to funxn
-// itmAndBtn[0].addEventListener("click", function(){duh(0)});
-
-// itmAndBtn[1].addEventListener("click", deleteItemAndBtn);
 
 
 
-var duh = function(event) {
-	console.log(event.target);
-	event.target.parentNode.remove();
-	// itmAndBtn[n].parentNode.removeChild(itmAndBtn[n]);
-}
-
-// // goes through every itm + btn
-// for (var i=0; i < delBtn.length; i++){
-//     console.log(delBtn[i]);
-//     // itmAndBtn[i].addEventListener("click", function(){duh(i)});
-//     // itmAndBtn[i].addEventListener("click", makeTitleToggle);
-//     // itmAndBtn[i].addEventListener("click", function(){console.log(i)});
-// 	   // itmAndBtn[i].addEventListener("click", console.log, false);
-// delBtn[i].addEventListener("click", duh);
-// //     function deleteItemAndBtn(i){
-// // 	itmAndBtn[i].parentNode.removeChild(itmAndBtn[i]);
-// // }
-//     // itmAndBtn[i].addEventListener("click", console.log(i));
-//     // itmAndBtn[i].addEventListener("click", deleteItemAndBtn);
+// var duh = function(event) {
+// 	// console.log(event.target);
+// 	event.target.parentNode.remove();
 // }
 
 
 for (var i=0; i < delBtn.length; i++){
-    console.log(delBtn[i]);
+    // console.log(delBtn[i]);
     delBtn[i].addEventListener("click", duh);
+    // use these 2 to have cursor automatically within input box
+		input.focus();
+		input.select();
 }
 
 // KNOWN GLITCH: CANT CLICK WITHIN TEXT FIELD OR ADD ITEM
