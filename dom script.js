@@ -1,5 +1,10 @@
+// # # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # #
+// CACHE SELECTORS
+// # # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # #
 // select elements we are interested in, cache them
-// we want to select user input, button, list
+
+
+
 var button = document.getElementById("enter"); // add to list btn
 var input = document.getElementById("userinput"); // text field
 var ul = document.querySelectorAll("ul")[1]; // shopping list
@@ -9,14 +14,20 @@ var toggleBtn = document.getElementById("toggle"); // toggle btn
 var h1 = document.querySelector("h1"); // shopping list title
 var delBtn = document.getElementsByClassName("deleter"); // delete btns
 
-// refactored code (cleaned up)
-// function declarations
 
-// moves cursor to back to input box
+
+// # # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # #
+// FUNCTION DECLARATIONS
+// # # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # #
+
+
+
+// moves cursor to input box
 function cursor(){
 	input.focus();
 	input.select();
 }
+
 
 // deletes list item when delete btn clicked
 var deleteItem = function(event) {
@@ -25,16 +36,23 @@ var deleteItem = function(event) {
 	cursor();
 }
 
-for (var i=0; i < delBtn.length; i++){
-    // console.log(delBtn[i]);
-    delBtn[i].addEventListener("click", deleteItem);
-    cursor();
+
+// adds delete btns to event listener, deletes item when clicked
+function watchDeleteBtns(){
+	for (var i=0; i < delBtn.length; i++){
+		// console.log(delBtn[i]);
+		delBtn[i].addEventListener("click", deleteItem);
+    	cursor();
+    }
 }
+
 
 function inputLength (){
 	return input.value.length;
 }
 
+
+// creates new list item and appends to bottom of list
 function createListElement(){
 	// create list element
 	var li = document.createElement("li");
@@ -60,49 +78,54 @@ function createListElement(){
 	input.value="";
 }
 
+
+// adds new list item after clicking button
 function addListAfterClick(){
 	if (inputLength() > 0){ // user input not blank
 		createListElement();
-
-		// adds new buttons to eventlistener
-		for (var i=0; i < delBtn.length; i++){
-			delBtn[i].addEventListener("click", deleteItem);
-			cursor();
-		}
+		watchDeleteBtns(); // adds new buttons to eventlistener
 	}
 }
 
+
+// adds new list item after pressing enter
 function addListAfterKeypress(event){ // still need event param here
 	//console.log(event);
-
 	// user input not blank AND press enter key >> create new items
 	if (inputLength() > 0 && event.keyCode ===13){ 
 		createListElement();
-
-		// adds new buttons to eventlistener
-		for (var i=0; i < delBtn.length; i++){
-			delBtn[i].addEventListener("click", deleteItem);
-		}
+		watchDeleteBtns(); // adds new buttons to eventlistener
 	}
 }
 
+
 function makeTitlePlain(){
 	h1.classList.remove("coolTitle");
+	cursor();
 }
+
 
 function makeTitleFun(){
 	h1.classList.add("coolTitle");
+	cursor();
 }
+
 
 function makeTitleToggle(){
 	h1.classList.toggle("coolTitle");
+	cursor();
 }
 
 
 
+// # # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # #
+// FUNCTION CALLS AND EVENT LISTENERS
+// # # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # #
 
-// FUNCTION CALLS AND EVENT DECLARATIONS
 
+
+// add pre-loaded list items to event listener
+watchDeleteBtns();
 
 // click button >> if anyone clicks btn, add new list itm
 button.addEventListener("click", addListAfterClick);
@@ -117,9 +140,4 @@ funBtn.addEventListener("click", makeTitleFun);
 toggleBtn.addEventListener("click", makeTitleToggle);
 
 
-
-
-// KNOWN GLITCH: CANT CLICK WITHIN TEXT FIELD OR ADD ITEM
-// BUTTON SOMETIMES. MAY HAVE TO DO WITH COOLTITLE STYLE
-// ON H1.
 
