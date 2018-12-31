@@ -25,7 +25,7 @@ var delBtn = document.getElementsByClassName("deleter"); // delete btns
 // moves cursor to input box
 function cursor(){
 	// input.focus();
-	// input.select();
+	input.select();
 	input.focus({preventScroll:true});
 	
 }
@@ -35,7 +35,7 @@ function cursor(){
 var deleteItem = function(event) {
 	// console.log(event.target);
 	event.target.parentNode.remove();
-	cursor();
+	// cursor();
 }
 
 
@@ -103,19 +103,19 @@ function addListAfterKeypress(event){ // still need event param here
 
 function makeTitlePlain(){
 	h1.classList.remove("coolTitle");
-	cursor();
+	// cursor();
 }
 
 
 function makeTitleFun(){
 	h1.classList.add("coolTitle");
-	cursor();
+	// cursor();
 }
 
 
 function makeTitleToggle(){
 	h1.classList.toggle("coolTitle");
-	cursor();
+	// cursor();
 }
 
 
