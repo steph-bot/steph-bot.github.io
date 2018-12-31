@@ -25,7 +25,7 @@ var delBtn = document.getElementsByClassName("deleter"); // delete btns
 // moves cursor to input box
 function cursor(){
 	// input.focus();
-	input.select();
+	// input.select();
 	input.focus({preventScroll:true});
 	
 }
