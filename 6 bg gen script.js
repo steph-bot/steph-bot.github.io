@@ -1,4 +1,6 @@
-// cache selectors
+/*---------------------------------------------------------------------------*\
+  # CACHE SELECTORS
+\*---------------------------------------------------------------------------*/
 
 var css = document.querySelector("h3");
 var color1 = document.querySelector(".color1");
@@ -8,7 +10,12 @@ var randomizer1 = document.getElementsByClassName("randomizer")[0];
 var randomizer2 = document.getElementsByClassName("randomizer")[1];
 
 
-// function declarations
+
+
+
+/*---------------------------------------------------------------------------*\
+  # FUNCTION DECLARATIONS
+\*---------------------------------------------------------------------------*/
 
 // sets bg gradient to input colors
 function setGradient() {
@@ -22,6 +29,7 @@ function setGradient() {
 	css.textContent = body.style.background + ";";
 }
 
+
 // generates a random hex color
 function randomHex() {
 	newHex = '#' + (function co(lor){   return (lor +=
@@ -29,12 +37,14 @@ function randomHex() {
 		&& (lor.length == 6) ?  lor : co(lor); })('');
 }
 
+
 // set bg gradient 1 color
 function firstColor() {
 	randomHex();
 	color1.value = newHex;
 	setGradient();
 }
+
 
 // set bg gradient 2 color
 function secondColor() {
@@ -44,8 +54,15 @@ function secondColor() {
 }
 
 
-// event listeners & function calls
+
+
+
+/*---------------------------------------------------------------------------*\
+  # EVENT LISTENERS & FUNCTION CALLS
+\*---------------------------------------------------------------------------*/
+
 setGradient(); // set bg to initial colors
+
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
 
@@ -53,9 +70,29 @@ randomizer1.addEventListener("click", firstColor);
 randomizer2.addEventListener("click", secondColor);
 
 
-// pretty colors:
+
+
+
+/*---------------------------------------------------------------------------*\
+  # COMMENTS
+\*---------------------------------------------------------------------------*/
+
+// * * * * * PRETTY BACKGROUNDS * * * * *
+
 // #FFA7C0
 // #F8EFFF
 
 // <input class = "color1" type="color" name="color1" value="#B8FDFF">
-	// <input class = "color2" type="color" name="color2" value="#FF3AEC">
+// <input class = "color2" type="color" name="color2" value="#FF3AEC">
+
+// linear-gradient(to right, rgb(254, 41, 110), rgb(255, 248, 232));
+
+
+
+
+
+
+// * * * * * IDEAS FOR FUTURE * * * * *
+
+// - convert rgb values to hex
+// - buttons to save favorite bg combos
