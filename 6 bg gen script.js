@@ -5,24 +5,18 @@ var color1 = document.querySelector(".color1");
 var color2 = document.querySelector(".color2");
 var body = document.getElementById("gradient");
 
+// function declaration
 
-
-color1.addEventListener("input", function() {
-	// console.log(color1.value);
+function setGradient() {
 	body.style.background = 
 	"linear-gradient(to right, " 
 	+ color1.value 
 	+ ", " 
 	+ color2.value 
 	+ ")";
-})
+}
 
-color2.addEventListener("input", function() {
-	// console.log(color2.value);
-	body.style.background = 
-	"linear-gradient(to right, " 
-	+ color1.value 
-	+ ", " 
-	+ color2.value 
-	+ ")";
-})
+// event listeners & function calls
+
+color1.addEventListener("input", setGradient);
+color2.addEventListener("input", setGradient);
