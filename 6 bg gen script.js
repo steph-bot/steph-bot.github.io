@@ -19,7 +19,6 @@ function setGradient() {
 }
 
 // event listeners & function calls
-
-setGradient(); // set bg to initial colors
+setGradient();
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
