@@ -96,3 +96,7 @@ randomizer2.addEventListener("click", secondColor);
 
 // - convert rgb values to hex
 // - buttons to save favorite bg combos
+
+
+
+
