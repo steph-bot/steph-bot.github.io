@@ -4,9 +4,13 @@ var css = document.querySelector("h3");
 var color1 = document.querySelector(".color1");
 var color2 = document.querySelector(".color2");
 var body = document.getElementById("gradient");
+var randomizer1 = document.getElementsByClassName("randomizer")[0];
+var randomizer2 = document.getElementsByClassName("randomizer")[1];
 
-// function declaration
 
+// function declarations
+
+// sets bg gradient to input colors
 function setGradient() {
 	body.style.background = 
 	"linear-gradient(to right, " 
@@ -18,7 +22,31 @@ function setGradient() {
 	css.textContent = body.style.background + ";";
 }
 
+// generates a random hex color
+function randomHex() {
+	newHex = '#' + (function co(lor){   return (lor +=
+		[0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f'][Math.floor(Math.random()*16)])
+		&& (lor.length == 6) ?  lor : co(lor); })('');
+}
+
+// set bg gradient 1 color
+function firstColor() {
+
+}
+
+
 // event listeners & function calls
-setGradient();
+setGradient(); // set bg to initial colors
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
+
+randomizer1.addEventListener("click", randomHex);
+randomizer2.addEventListener("click", randomHex);
+
+
+// pretty colors:
+// #FFA7C0
+// #F8EFFF
+
+// <input class = "color1" type="color" name="color1" value="#B8FDFF">
+	// <input class = "color2" type="color" name="color2" value="#FF3AEC">
