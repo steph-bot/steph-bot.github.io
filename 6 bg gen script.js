@@ -31,7 +31,16 @@ function randomHex() {
 
 // set bg gradient 1 color
 function firstColor() {
+	randomHex();
+	color1.value = newHex;
+	setGradient();
+}
 
+// set bg gradient 2 color
+function secondColor() {
+	randomHex();
+	color2.value = newHex;
+	setGradient();
 }
 
 
@@ -40,8 +49,8 @@ setGradient(); // set bg to initial colors
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
 
-randomizer1.addEventListener("click", randomHex);
-randomizer2.addEventListener("click", randomHex);
+randomizer1.addEventListener("click", firstColor);
+randomizer2.addEventListener("click", secondColor);
 
 
 // pretty colors:
