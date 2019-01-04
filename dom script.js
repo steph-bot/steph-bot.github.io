@@ -119,6 +119,11 @@ function makeTitleToggle(){
 }
 
 
+function itemStrikeThru(){
+	ul.classList.toggle("done");
+}
+
+
 
 // # # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # #
 // FUNCTION CALLS AND EVENT LISTENERS
@@ -140,6 +145,11 @@ input.addEventListener("keypress", addListAfterKeypress);
 crazybtn.addEventListener("click", makeTitlePlain);
 funBtn.addEventListener("click", makeTitleFun);
 toggleBtn.addEventListener("click", makeTitleToggle);
+
+
+
+
+ul.addEventListener("click", itemStrikeThru);
 
 
 
