@@ -13,7 +13,8 @@ var funBtn = document.getElementById("addStyle"); // fun btn
 var toggleBtn = document.getElementById("toggle"); // toggle btn
 var h1 = document.querySelector("h1"); // shopping list title
 var delBtn = document.getElementsByClassName("deleter"); // delete btns
-var itemz = document.getElementsByClassName("item"); // list items
+
+
 
 
 
@@ -120,21 +121,13 @@ function makeTitleToggle(){
 }
 
 
-// function itemStrikeThru(){
-// 	itemz[0].classList.toggle("done");
-// }
-
-
-function strikeThrough(e) {
-	console.log(e);
-	console.log(e.target);
-	console.log(e.target.tagName);
-	console.log(e.target.classList);
-
-
-	
-    if (e.target.tagName === "LI") {
-        e.target.classList.toggle("done");
+function strikeThrough(event) {
+	// console.log(event);
+	// console.log(event.target);
+	// console.log(event.target.tagName);
+	// console.log(event.target.classList);
+    if (event.target.tagName === "LI") {
+        event.target.classList.toggle("done");
     }
 }
 
@@ -163,10 +156,10 @@ crazybtn.addEventListener("click", makeTitlePlain);
 funBtn.addEventListener("click", makeTitleFun);
 toggleBtn.addEventListener("click", makeTitleToggle);
 
+// click list item >> toggles strikethru
 ul.addEventListener("click", strikeThrough);
 
 
-// itemz[0].addEventListener("click", itemStrikeThru);
 
 
 
