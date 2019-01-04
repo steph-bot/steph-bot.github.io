@@ -1,7 +1,6 @@
-// # # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # #
-// CACHE SELECTORS
-// # # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # #
-// select elements we are interested in, cache them
+/*---------------------------------------------------------------------------*\
+  # CACHE SELECTORS: select items we are interested in, cache them
+\*---------------------------------------------------------------------------*/
 
 
 
@@ -16,9 +15,11 @@ var delBtn = document.getElementsByClassName("deleter"); // delete btns
 
 
 
-// # # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # #
-// FUNCTION DECLARATIONS
-// # # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # #
+
+
+/*---------------------------------------------------------------------------*\
+  # FUNCTION DECLARATIONS
+\*---------------------------------------------------------------------------*/
 
 
 
@@ -119,10 +120,23 @@ function makeTitleToggle(){
 }
 
 
+function strikeThrough(event) {
+	// console.log(event);
+	// console.log(event.target);
+	// console.log(event.target.tagName);
+	// console.log(event.target.classList);
+    if (event.target.tagName === "LI") {
+        event.target.classList.toggle("done");
+    }
+}
 
-// # # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # #
-// FUNCTION CALLS AND EVENT LISTENERS
-// # # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # ## # # #
+
+
+
+
+/*---------------------------------------------------------------------------*\
+  # EVENT LISTENERS & FUNCTION CALLS
+\*---------------------------------------------------------------------------*/
 
 
 
@@ -140,6 +154,11 @@ input.addEventListener("keypress", addListAfterKeypress);
 crazybtn.addEventListener("click", makeTitlePlain);
 funBtn.addEventListener("click", makeTitleFun);
 toggleBtn.addEventListener("click", makeTitleToggle);
+
+// click list item >> toggles strikethru
+ul.addEventListener("click", strikeThrough);
+
+
 
 
 
