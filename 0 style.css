@@ -83,7 +83,7 @@ table {
 .primary-nav__link{
   color: yellow;
   text-decoration: none;
-  background-color: rgba(0, 176, 0, 0.5);
+  background-color: rgba(255, 0, 255, 0.5);
   padding: 18px;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
