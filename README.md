@@ -5,4 +5,8 @@ Just a landing page for practice.
 https://steph-bot.github.io
 
 
-*Engineered by Stephanie, 2018
+TO DO LIST:
+- make it responsive
+- reverse chronological?
+- delete ugly pages
+- pick best few and delete others
