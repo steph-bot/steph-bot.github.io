@@ -7,7 +7,7 @@ https://steph-bot.github.io
 
 TO DO LIST:
 - make it responsive
-- reverse chronological?
+- add dates
 - delete ugly pages
 - pick best few and delete others
 
