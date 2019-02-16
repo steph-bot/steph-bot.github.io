@@ -10,3 +10,5 @@ TO DO LIST:
 - reverse chronological?
 - delete ugly pages
 - pick best few and delete others
+
+Initial Commit: Jul 5, 2018
