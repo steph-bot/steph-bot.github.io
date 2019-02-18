@@ -10,5 +10,6 @@ TO DO LIST:
 - add dates
 - delete ugly pages
 - pick best few and delete others
+- dom + javascript page: nav bar adjusted to work with header
 
 Initial Commit: Jul 5, 2018
