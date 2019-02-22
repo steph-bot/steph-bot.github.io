@@ -1,6 +1,6 @@
 # steph-bot.github.io
 
-Just a landing page for practice. Links to my other projects.
+Just a landing page for practice with links to my other projects.
 
 https://steph-bot.github.io
 
