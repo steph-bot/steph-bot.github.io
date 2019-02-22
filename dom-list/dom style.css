@@ -2,7 +2,7 @@
   text-align: center;
   font-family: 'Oswald', Helvetica, sans-serif;
   font-size: 40px;
-  transform: skewY(10deg); /*if skew intersects with list, buggy*/
+  /*transform: skewY(10deg); if skew intersects with list, buggy*/
   letter-spacing: 4px;
   word-spacing: -8px;
   color: tomato;
