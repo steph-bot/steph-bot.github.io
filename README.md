@@ -1,14 +1,12 @@
 # steph-bot.github.io
 
-Just a landing page for practice.
+Just a landing page for practice. Links to my other projects.
 
 https://steph-bot.github.io
 
 
 TO DO LIST:
-- make it responsive
-- add dates
-- delete ugly pages
+- improve mobile responsivity
 - pick best few and delete others
 - dom + javascript page: nav bar adjusted to work with header
 
