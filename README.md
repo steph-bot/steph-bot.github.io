@@ -6,6 +6,7 @@ https://steph-bot.github.io
 
 
 TO DO LIST:
+- distinguish between tutorials and my own original work
 - improve mobile responsivity
 - pick best few and delete others
 - dom + javascript page: nav bar adjusted to work with header
